@@ -7,9 +7,9 @@
 #include <stdio.h>
 
 // does all the calculations
-int ack(m,n)
-int m,n; {
+int ack(int m, int n) {
 	int ans;
+	
 	if (m == 0) ans = n+1;
 	else if (n == 0) ans = ack(m-1,1);
 	else ans = ack(m-1, ack(m,n-1));
@@ -17,10 +17,9 @@ int m,n; {
 }
 
 // increments i and j and passes them as args to ack()
-int main (argc, argv)
-int argc; char ** argv; { 
-
+int main (int argc, char ** argv) { 
 	int i,j;
+
 	for (i=0; i<6; i++)
 	for (j=0;j<6; j++)
 
