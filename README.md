@@ -1,2 +1,4 @@
 # algorithms_and_stuff
-a collection of algorithms and other interesting programming stuff
+
+A collection of algorithms and other interesting programming stuff
+that I find interesting.
