@@ -1,5 +1,5 @@
 '''
-ackermann's fuction in python
+Ackermann's fuction in python
 
 NOTE: after calculating ackermann of 4, 1
 it crashes because python says: RecursionError: maximum recursion depth exceeded in comparison
@@ -21,7 +21,7 @@ def ack(m, n):
         ans = ack(m - 1, ack(m, n - 1))
     return ans
 
-# increments the vals passed as n and m to the ack() function and calls it
+# increments i and j and passes them as args to ack()
 def main():
     for i in range(6):
         for j in range(6):
