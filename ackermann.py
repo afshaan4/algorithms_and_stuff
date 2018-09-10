@@ -2,7 +2,7 @@
 Ackermann's fuction in python
 
 NOTE: after calculating ackermann of 4, 1
-it crashes because python says: RecursionError: maximum recursion depth exceeded in comparison
+it crashes with a: RecursionError: maximum recursion depth exceeded in comparison
 '''
 
 # this does all the calculations
