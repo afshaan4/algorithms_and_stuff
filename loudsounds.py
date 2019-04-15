@@ -8,7 +8,7 @@ import pyaudio
 import struct
 import math
 
-# i know this is messy, some glob vars here, some in the class
+# i know this is messy, some global vars here, some in the class
 # fix it if ya want to
 RATE = 44100  
 INPUT_BLOCK_TIME = 0.05
@@ -83,7 +83,7 @@ class loudTester(object):
             devinfo = self.pa.get_device_info_by_index(i)   
             print( "Device %d: %s"%(i,devinfo["name"]) )
 
-            for keyword in ["mic","input"]:
+            for keyword in ["mic","input", "usb"]:
                 if keyword in devinfo["name"].lower():
                     print("Found an input: device %d - %s"%(i,devinfo["name"]))
                     device_index = i
@@ -97,12 +97,12 @@ class loudTester(object):
     def start_recording( self ):
         device_index = self.find_input_device()
 
-        stream = self.pa.open( format = FORMAT,
-                                    channels = args.channels,
-                                    rate = RATE,
-                                    input = True,
-                                    input_device_index = device_index,
-                                    frames_per_buffer = INPUT_FRAMES_PER_BLOCK)
+        stream = self.pa.open(  format = FORMAT,
+                                channels = args.channels,
+                                rate = RATE,
+                                input = True,
+                                input_device_index = device_index,
+                                frames_per_buffer = INPUT_FRAMES_PER_BLOCK)
         return stream
 
     def soundDetected(self):
@@ -145,5 +145,5 @@ class loudTester(object):
 if __name__ == "__main__":
     lt = loudTester()
 
-    for i in range(1000):
+    while(True):
         lt.listen()
